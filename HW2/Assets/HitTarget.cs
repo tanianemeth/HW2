@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class HitTarget : MonoBehaviour
 {
-    public Animation swing;
-    void OnCollisionEnter()
+    public Animator animator;
+
+    void OnCollisionEnter(Collision collision )
     {
-         swing.Play();
+        Debug.Log("gor hit");
+         animator.SetTrigger("Hit");
     }
 }
