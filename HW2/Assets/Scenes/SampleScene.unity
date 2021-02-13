@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.4423754, g: 0.4914304, b: 0.5712953, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -139,6 +139,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e1adc9bab7959e4691b2dcec88acca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kyle: {fileID: 271091784}
+  forwardForce: 2000
+  sidewaysForce: 1
+--- !u!54 &271091784
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271091780}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &400808438
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,6 +170,7 @@ GameObject:
   - component: {fileID: 400808441}
   - component: {fileID: 400808440}
   - component: {fileID: 400808439}
+  - component: {fileID: 400808443}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -227,12 +247,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 400808438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.74, y: 1, z: 1}
+  m_LocalPosition: {x: -1.82, y: 4.63, z: 5.33}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &400808443
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400808438}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &681727431
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +282,7 @@ GameObject:
   - component: {fileID: 681727433}
   - component: {fileID: 681727432}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -259,7 +295,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681727431}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: a2c46bf209ecff849b9f9bf7e2eeac56, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -283,7 +319,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e334a442759416d479af0dc59b634e46, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1095,7 +1131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9739f8e18afc24db38b64f66eda3e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swing: {fileID: 0}
+  animator: {fileID: 1103295877}
 --- !u!1 &1359045243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,10 +1219,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359045243}
-  m_LocalRotation: {x: 0.45451945, y: 0.54167527, z: 0.45451945, w: 0.54167527}
+  m_LocalRotation: {x: 0.6258954, y: 0.047064207, z: -0.03664764, w: 0.7776226}
   m_LocalPosition: {x: 2.65, y: 3, z: 5.28}
   m_LocalScale: {x: 1, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 80}
+  m_LocalEulerAnglesHint: {x: 77.653, y: 7.3410006, z: 0.514}
