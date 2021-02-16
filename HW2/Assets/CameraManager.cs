@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ExampleScript : MonoBehaviour {
+public class CameraManager : MonoBehaviour {
     public Camera firstPersonCamera;
     public Camera overheadCamera;
 
@@ -18,5 +18,19 @@ public class ExampleScript : MonoBehaviour {
         overheadCamera.enabled = false;
     }
 
-    public vou
+    void Update()
+    {
+
+
+        if (Input.GetKey("c"))
+        {
+            Debug.Log("c");
+            ShowFirstPersonView();
+        }
+        if (Input.GetKey("v"))
+        {
+            Debug.Log("v");
+           ShowOverheadView();
+        }
+    }
 }
