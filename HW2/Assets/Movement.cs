@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
     private CharacterController characterController;
     private Animator animator;
     public float speed = 1f;
+   
     void Awake()
     {
         characterController = GetComponentInChildren<CharacterController>();
@@ -26,7 +27,18 @@ public class Movement : MonoBehaviour
         {
             characterController.SimpleMove(new Vector3(0,-8,0));
         }
-
+    
+        if (Input.GetKey("q"))
+        {
+            Debug.Log("q");
+            animator.SetTrigger("shoot");
+            
+        }
+        if(forward > 0.01 || sideways > 0.01 )
+        {
+             animator.ResetTrigger("shoot");
+        }
+  
         animator.SetFloat("speed",characterController.velocity.magnitude);
     }
 }
