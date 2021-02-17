@@ -1,5 +1,5 @@
 ﻿
-// pick up and throw object tutorial :  https://www.youtube.com/watch?v=_xMhkK6GTXA
+// pick up and drag tutorial: https://www.youtube.com/watch?v=0yHBDZHLRbQ
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
