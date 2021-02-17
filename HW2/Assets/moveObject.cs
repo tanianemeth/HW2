@@ -1,51 +1,33 @@
-﻿using System.Collections;
+﻿
+// pick up and throw object tutorial :  https://www.youtube.com/watch?v=_xMhkK6GTXA
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class moveObject : MonoBehaviour
 {
-    Vector3 objPosition;
-    float distance;
+    private Vector3 offset;
 
-    public bool canGrab = true;
-    public GameObject obj;
-    public GameObject parentTemp;
-    public bool isHolding = false;
+    private float mouseCoordinates;
 
-    void Update()
+    void OnMouseDown()
     {
-        if(isHolding == true)
-        {
-            obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            obj.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-            obj.transform.SetParent(parentTemp.transform);
-        
-        if(Input.GetMouseButtonDown(1))
-        {
-            //throw
-        }
-        }
-        else
-        {
-            objPosition = obj.transform.position;
-            obj.transform.SetParent(null);
-            obj.GetComponent<Rigidbody>().useGravity = true;
-            obj.transform.position = objPosition;
-        }
+        mouseCoordinates = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
+        offset = gameObject.transform.position - GetMouseWorldPosition();
     }
-    // Start is called before the first frame update
-    void onMouseDown()
-    {
-        isHolding = true;
-        obj.GetComponent<Rigidbody>().useGravity = false;
-        obj.GetComponent<Rigidbody>().detectCollisions = true;
-       
-       }
+   
 
-    // Update is called once per frame
-    void onMouseUp()
+    private Vector3 GetMouseWorldPosition()
     {
-        GetComponent<Rigidbody>().useGravity = false;
-        this.transform.parent = null;
+        //pixel coord
+        Vector3 mousePoint = Input.mousePosition;
+
+        //xyz
+        mousePoint.z = mouseCoordinates;
+        return Camera.main.ScreenToWorldPoint(mousePoint);
+    }
+     void OnMouseDrag()
+    {
+        transform.position = GetMouseWorldPosition() + offset;
     }
 }
