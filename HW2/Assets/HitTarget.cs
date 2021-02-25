@@ -7,7 +7,8 @@ public class HitTarget : MonoBehaviour
 
     void OnCollisionEnter(Collision collision )
     {
-        Debug.Log("gor hit");
-         animator.SetTrigger("Hit");
+        Debug.Log("got hit");
+         animator.SetTrigger("hit");
+        
     }
 }
